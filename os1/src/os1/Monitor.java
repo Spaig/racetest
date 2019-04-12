@@ -1,5 +1,5 @@
 package os1;
-
+//monitor class to aid in synchronization
 public class Monitor {
 
 	private int thisize;
@@ -11,7 +11,7 @@ public class Monitor {
 	private int[] buffer;
 	int totalinterest = 0;
 	int totalbal = 0;
-
+//constructor
 	public Monitor(int size, int threads) {
 
 		thisize = size;
@@ -19,7 +19,7 @@ public class Monitor {
 		done = 0;
 		buffer = new int[size];
 	}
-
+//writer method
 	public synchronized void write(int x) {
 
 		while (count == thisize) {
@@ -34,7 +34,7 @@ public class Monitor {
 		count++;
 		notify();
 	}
-
+//reader method
 	public synchronized int read() {
 
 		while (count == 0) {
@@ -50,11 +50,11 @@ public class Monitor {
 		notify();
 		return out;
 	}
-
+//method to compound interest
 	public void addInterest(int x) {
 		totalinterest = totalinterest + x;
 	}
-
+//method to increase balance
 	public void totalbal(int x) {
 		totalbal = totalbal + x;
 	}

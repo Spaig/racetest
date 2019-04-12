@@ -10,7 +10,7 @@ class Simthread implements Runnable {
 	private int balance;
 	private int finalday;
 	Monitor context;
-
+//constructor
 	public Simthread(Monitor m, int x, int y, int z) {
 		context = m;
 		this.transactions = x;
@@ -29,7 +29,7 @@ class Simthread implements Runnable {
 	public int getBal() {
 		return this.balance;
 	}
-
+//method to execute the sim
 	@Override
 	public void run() {
 		// 'daily' number of transactions per day

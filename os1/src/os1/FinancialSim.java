@@ -1,7 +1,7 @@
 package os1;
 
 import java.util.Scanner;
-
+//program that simulates bank transactions
 public class FinancialSim {
 
 	public static void main() {
